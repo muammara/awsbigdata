@@ -1,0 +1,8 @@
+sudo yum install gcc make git
+git clone https://greghrahn/tpch-kit
+export OS=LINUX
+cd ~
+mkdir emrdata
+export DSS_PATH=$HOME/emrdata
+cd tpch-kit/dbgen
+sudo ./dbgen -v -T o -s 10 # Creating 10GB datasets
