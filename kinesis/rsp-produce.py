@@ -6,7 +6,7 @@ import random
 import time
 from sense_hat import SenseHat
 
-my_stream_name = ''
+my_stream_name = 'python-stream'
 rsp_id= 'rsp-home'
 kinesis_client = boto3.client('kinesis', region_name='us-east-1')
 
