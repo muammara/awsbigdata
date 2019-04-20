@@ -6,8 +6,8 @@ import random
 import time
 from sense_hat import SenseHat
 
-my_stream_name = 'python-stream'
-rsp-id= 'rsp-home'
+my_stream_name = ''
+rsp_id= 'rsp-home'
 
 kinesis_client = boto3.client('kinesis', region_name='us-east-1')
 def put_to_stream(thing_id, property_value, property_timestamp):
@@ -17,7 +17,7 @@ def put_to_stream(thing_id, property_value, property_timestamp):
                 'thing_id': thing_id
               }
     """
-    payload =read_rsp(rsp-id)
+    payload =read_rsp(rsp_id)
     print (payload)
 
     put_response = kinesis_client.put_record(
