@@ -18,7 +18,7 @@ def put_to_stream(thing_id, property_value, property_timestamp):
                 'thing_id': thing_id
               }
     """
-    payload =read_rsp()
+    payload =read_rsp("rsp-home")
 
     print (payload)
 
@@ -27,7 +27,7 @@ def put_to_stream(thing_id, property_value, property_timestamp):
                         Data=json.dumps(payload),
                         PartitionKey=thing_id)
     #print(put_response)
-def read_rsp(rspname ='rsp-home')
+def read_rsp(rspname)
     sense = SenseHat()
     sense.clear()
     # Take readings from all three sensors
