@@ -14,7 +14,7 @@ def put_to_stream(payload):
     put_response = kinesis_client.put_record(
                             StreamName=my_stream_name,
                             Data=json.dumps(payload),
-                            PartitionKey=payload['thing'])
+                            PartitionKey=rsp_id)
 
 def read_rsp(rspname="rsp-home"):
     sense = SenseHat()
