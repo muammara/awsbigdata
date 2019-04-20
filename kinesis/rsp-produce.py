@@ -11,8 +11,10 @@ rsp_id= 'rsp-home'
 kinesis_client = boto3.client('kinesis', region_name='us-east-1')
 
 def put_to_stream(payload):
-    put_response = kinesis_client.put_record(payload)
-    #print(put_response)
+    put_response = kinesis_client.put_record(
+                            StreamName=my_stream_name,
+                            Data=json.dumps(payload),
+                            PartitionKey=thing_id)
 
 def read_rsp(rspname="rsp-home"):
     sense = SenseHat()
